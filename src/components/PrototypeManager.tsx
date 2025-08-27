@@ -1,12 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { Grid, GridColumn } from '@progress/kendo-react-grid';
-import { Button } from '@progress/kendo-react-buttons';
-import { Dialog, DialogActionsBar } from '@progress/kendo-react-dialogs';
-import { Input, TextArea } from '@progress/kendo-react-inputs';
-import { DropDownList } from '@progress/kendo-react-dropdowns';
-import { Badge } from '@progress/kendo-react-indicators';
-import { Notification, NotificationGroup } from '@progress/kendo-react-notification';
+import { Plus, Eye, AlertTriangle, CheckCircle, Clock, Shield, X } from 'lucide-react';
 import { prototypeService } from '../services/prototypeService';
 
 interface Prototype {
@@ -33,6 +27,12 @@ interface PrototypeManagerProps {
   onPrototypeSelect?: (prototype: Prototype) => void;
 }
 
+interface Notification {
+  id: number;
+  message: string;
+  type: 'success' | 'error' | 'info';
+}
+
 const PrototypeManager: React.FC<PrototypeManagerProps> = ({ 
   projectId, 
   onPrototypeSelect 
@@ -46,7 +46,7 @@ const PrototypeManager: React.FC<PrototypeManagerProps> = ({
     healthcareCompliance: false,
     requiresApproval: true
   });
-  const [notifications, setNotifications] = useState<any[]>([]);
+  const [notifications, setNotifications] = useState<Notification[]>([]);
   
   const queryClient = useQueryClient();
 
@@ -81,17 +81,20 @@ const PrototypeManager: React.FC<PrototypeManagerProps> = ({
   });
 
   const addNotification = (message: string, type: 'success' | 'error' | 'info' = 'info') => {
-    const notification = {
+    const notification: Notification = {
       id: Date.now(),
       message,
       type,
-      closable: true,
     };
     setNotifications(prev => [...prev, notification]);
     
     setTimeout(() => {
       setNotifications(prev => prev.filter(n => n.id !== notification.id));
     }, 5000);
+  };
+
+  const removeNotification = (id: number) => {
+    setNotifications(prev => prev.filter(n => n.id !== id));
   };
 
   const handleCreatePrototype = () => {
@@ -106,25 +109,17 @@ const PrototypeManager: React.FC<PrototypeManagerProps> = ({
     });
   };
 
-  const getStatusBadge = (status: string) => {
-    const statusColors: Record<string, 'primary' | 'success' | 'warning' | 'error' | 'info'> = {
-      draft: 'info',
-      review: 'warning',
-      approved: 'success',
-      testing: 'primary',
-      deployed: 'success',
-      deprecated: 'error',
-      rejected: 'error'
+  const getStatusColor = (status: string) => {
+    const colors: Record<string, string> = {
+      draft: 'bg-gray-100 text-gray-800',
+      review: 'bg-yellow-100 text-yellow-800',
+      approved: 'bg-green-100 text-green-800',
+      testing: 'bg-blue-100 text-blue-800',
+      deployed: 'bg-green-100 text-green-800',
+      deprecated: 'bg-red-100 text-red-800',
+      rejected: 'bg-red-100 text-red-800'
     };
-
-    return (
-      <Badge 
-        themeColor={statusColors[status] || 'info'}
-        size="small"
-      >
-        {status.toUpperCase()}
-      </Badge>
-    );
+    return colors[status] || 'bg-gray-100 text-gray-800';
   };
 
   const getComplianceBadges = (prototype: Prototype) => {
@@ -132,323 +127,276 @@ const PrototypeManager: React.FC<PrototypeManagerProps> = ({
     
     if (prototype.healthcareCompliance) {
       badges.push(
-        <Badge key="healthcare" themeColor="success" size="small" style={{ marginRight: '4px' }}>
+        <span key="healthcare" className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 mr-1">
+          <Shield className="w-3 h-3 mr-1" />
           HEALTHCARE
-        </Badge>
+        </span>
       );
     }
     
     if (prototype.hipaaReviewed) {
       badges.push(
-        <Badge key="hipaa" themeColor="primary" size="small" style={{ marginRight: '4px' }}>
+        <span key="hipaa" className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 mr-1">
+          <CheckCircle className="w-3 h-3 mr-1" />
           HIPAA
-        </Badge>
+        </span>
       );
     }
     
     if (prototype.accessibilityTested) {
       badges.push(
-        <Badge key="a11y" themeColor="info" size="small" style={{ marginRight: '4px' }}>
+        <span key="a11y" className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800 mr-1">
+          <Eye className="w-3 h-3 mr-1" />
           A11Y
-        </Badge>
+        </span>
       );
     }
-
-    return <div style={{ display: 'flex', flexWrap: 'wrap' }}>{badges}</div>;
+    
+    return badges;
   };
 
-  const prototypeTypeOptions = [
-    { text: 'UI Component', value: 'ui-component' },
-    { text: 'Full Application', value: 'full-app' },
-    { text: 'Workflow', value: 'workflow' },
-    { text: 'Form', value: 'form' },
-    { text: 'Dashboard', value: 'dashboard' },
-    { text: 'Report', value: 'report' },
-    { text: 'Mobile', value: 'mobile' }
-  ];
-
-  const frameworkOptions = [
-    { text: 'React', value: 'react' },
-    { text: 'Vue', value: 'vue' },
-    { text: 'Angular', value: 'angular' },
-    { text: 'Vanilla JS', value: 'vanilla-js' },
-    { text: 'Static HTML', value: 'html-static' }
-  ];
+  if (isLoading) {
+    return (
+      <div data-testid="prototype-manager" className="flex items-center justify-center h-64">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      </div>
+    );
+  }
 
   if (error) {
     return (
-      <div className="error-container" style={{ padding: '20px', textAlign: 'center' }}>
-        <h3>Error Loading Prototypes</h3>
-        <p style={{ color: '#d32f2f' }}>
-          {error instanceof Error ? error.message : 'Failed to load prototypes'}
-        </p>
-        <Button onClick={() => queryClient.invalidateQueries({ queryKey: ['prototypes', projectId] })}>
-          Retry
-        </Button>
+      <div data-testid="prototype-manager" className="bg-red-50 border border-red-200 rounded-lg p-4">
+        <div className="flex items-center">
+          <AlertTriangle className="w-5 h-5 text-red-400 mr-2" />
+          <p className="text-red-800">Failed to fetch prototypes</p>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="prototype-manager">
-      <div className="prototype-header" style={{ 
-        display: 'flex', 
-        justifyContent: 'space-between', 
-        alignItems: 'center', 
-        marginBottom: '20px',
-        padding: '10px 0',
-        borderBottom: '2px solid #e3f2fd'
-      }}>
+    <div data-testid="prototype-manager" className="space-y-6">
+      {/* Notifications */}
+      {notifications.length > 0 && (
+        <div className="fixed top-4 right-4 z-50 space-y-2">
+          {notifications.map(notification => (
+            <div
+              key={notification.id}
+              className={`
+                flex items-center justify-between p-4 rounded-lg shadow-lg max-w-sm
+                ${notification.type === 'success' ? 'bg-green-100 text-green-800 border border-green-200' : ''}
+                ${notification.type === 'error' ? 'bg-red-100 text-red-800 border border-red-200' : ''}
+                ${notification.type === 'info' ? 'bg-blue-100 text-blue-800 border border-blue-200' : ''}
+              `}
+            >
+              <span className="text-sm font-medium">{notification.message}</span>
+              <button
+                onClick={() => removeNotification(notification.id)}
+                className="ml-2 text-gray-400 hover:text-gray-600"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Header */}
+      <div className="flex justify-between items-center">
         <div>
-          <h3 style={{ margin: 0, color: '#1976d2' }}>Prototype Management</h3>
-          <p style={{ margin: '5px 0 0 0', color: '#666', fontSize: '14px' }}>
-            Healthcare AI Prototypes with Compliance Tracking
+          <h2 className="text-xl font-semibold text-gray-900">Prototypes</h2>
+          <p className="text-sm text-gray-600 mt-1">
+            Manage healthcare AI prototypes and interactive mockups
           </p>
         </div>
-        <Button 
-          themeColor="primary"
+        <button
           onClick={() => setShowCreateDialog(true)}
-          disabled={projectId <= 0}
+          className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
         >
-          Create Prototype
-        </Button>
+          <Plus className="w-4 h-4 mr-2" />
+          Create New Prototype
+        </button>
       </div>
 
-      {isLoading ? (
-        <div style={{ textAlign: 'center', padding: '40px' }}>
-          <p>Loading prototypes...</p>
-        </div>
-      ) : prototypes.length === 0 ? (
-        <div style={{ 
-          textAlign: 'center', 
-          padding: '40px',
-          backgroundColor: '#f8f9fa',
-          borderRadius: '8px',
-          border: '1px solid #dee2e6'
-        }}>
-          <h4 style={{ color: '#6c757d', marginBottom: '10px' }}>No Prototypes Found</h4>
-          <p style={{ color: '#6c757d', marginBottom: '20px' }}>
-            Create your first prototype to get started with interactive healthcare UI development.
+      {/* Prototypes Grid */}
+      {prototypes.length === 0 ? (
+        <div className="text-center py-12">
+          <Clock className="mx-auto h-12 w-12 text-gray-400" />
+          <h3 className="mt-2 text-sm font-medium text-gray-900">No prototypes</h3>
+          <p className="mt-1 text-sm text-gray-500">
+            Get started by creating a new prototype for your project.
           </p>
-          <Button 
-            themeColor="primary"
-            onClick={() => setShowCreateDialog(true)}
-            disabled={projectId <= 0}
-          >
-            Create First Prototype
-          </Button>
         </div>
       ) : (
-        <Grid 
-          data={prototypes}
-          style={{ height: '500px' }}
-          scrollable="virtual"
-          sortable
-          filterable
-          onRowClick={({ dataItem }) => onPrototypeSelect?.(dataItem)}
-        >
-          <GridColumn 
-            field="name" 
-            title="Prototype Name" 
-            width="200px"
-            cell={({ dataItem }) => (
-              <td style={{ fontWeight: 'bold', color: '#1976d2' }}>
-                {dataItem.name}
-                <div style={{ fontSize: '12px', color: '#666', marginTop: '2px' }}>
-                  {dataItem.framework} • v{dataItem.currentVersion}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {prototypes.map((prototype) => (
+            <div
+              key={prototype.id}
+              className="prototype-card relative rounded-lg border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+              onClick={() => onPrototypeSelect?.(prototype)}
+            >
+              <div className="flex items-start justify-between">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-sm font-medium text-gray-900 truncate">
+                    {prototype.name}
+                  </h3>
+                  <p className="text-xs text-gray-500 mt-1">
+                    {prototype.prototypeType} • {prototype.framework}
+                  </p>
                 </div>
-              </td>
-            )}
-          />
-          
-          <GridColumn 
-            field="prototypeType" 
-            title="Type" 
-            width="120px"
-            cell={({ dataItem }) => (
-              <td>
-                <Badge themeColor="info" size="small">
-                  {dataItem.prototypeType.replace('-', ' ').toUpperCase()}
-                </Badge>
-              </td>
-            )}
-          />
-          
-          <GridColumn 
-            field="status" 
-            title="Status" 
-            width="100px"
-            cell={({ dataItem }) => (
-              <td>{getStatusBadge(dataItem.status)}</td>
-            )}
-          />
-
-          <GridColumn 
-            field="compliance" 
-            title="Compliance" 
-            width="180px"
-            cell={({ dataItem }) => (
-              <td>{getComplianceBadges(dataItem)}</td>
-            )}
-          />
-
-          <GridColumn 
-            field="versionCount" 
-            title="Versions" 
-            width="80px"
-            cell={({ dataItem }) => (
-              <td style={{ textAlign: 'center' }}>
-                <Badge themeColor="primary" size="small">
-                  {dataItem.versionCount || 0}
-                </Badge>
-              </td>
-            )}
-          />
-
-          <GridColumn 
-            field="openFeedbackCount" 
-            title="Feedback" 
-            width="80px"
-            cell={({ dataItem }) => (
-              <td style={{ textAlign: 'center' }}>
-                <Badge 
-                  themeColor={dataItem.openFeedbackCount > 0 ? 'warning' : 'success'} 
-                  size="small"
-                >
-                  {dataItem.openFeedbackCount || 0}
-                </Badge>
-              </td>
-            )}
-          />
-
-          <GridColumn 
-            field="createdDate" 
-            title="Created" 
-            width="140px"
-            cell={({ dataItem }) => (
-              <td>
-                <div>{new Date(dataItem.createdDate).toLocaleDateString()}</div>
-                <div style={{ fontSize: '12px', color: '#666' }}>
-                  by {dataItem.createdBy}
+                <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(prototype.status)}`}>
+                  {prototype.status.toUpperCase()}
+                </span>
+              </div>
+              
+              {prototype.description && (
+                <p className="text-sm text-gray-600 mt-2 line-clamp-2">
+                  {prototype.description}
+                </p>
+              )}
+              
+              <div className="mt-4">
+                <div className="flex flex-wrap gap-1">
+                  {getComplianceBadges(prototype)}
                 </div>
-              </td>
-            )}
-          />
-        </Grid>
+              </div>
+              
+              <div className="mt-4 flex items-center justify-between text-xs text-gray-500">
+                <span>v{prototype.currentVersion}</span>
+                <div className="flex items-center space-x-2">
+                  {prototype.versionCount && (
+                    <span>{prototype.versionCount} versions</span>
+                  )}
+                  {prototype.openFeedbackCount && prototype.openFeedbackCount > 0 && (
+                    <span className="text-orange-600 font-medium">
+                      {prototype.openFeedbackCount} feedback
+                    </span>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       )}
 
       {/* Create Prototype Dialog */}
       {showCreateDialog && (
-        <Dialog title="Create New Prototype" onClose={() => setShowCreateDialog(false)}>
-          <div style={{ padding: '20px', minWidth: '500px' }}>
-            <div style={{ marginBottom: '15px' }}>
-              <label>Prototype Name *</label>
-              <Input
-                value={newPrototype.name}
-                onChange={(e) => setNewPrototype({ ...newPrototype, name: e.target.value })}
-                placeholder="Enter prototype name"
-                style={{ width: '100%', marginTop: '5px' }}
-              />
-            </div>
-
-            <div style={{ marginBottom: '15px' }}>
-              <label>Description</label>
-              <TextArea
-                value={newPrototype.description}
-                onChange={(e) => setNewPrototype({ ...newPrototype, description: e.target.value })}
-                placeholder="Describe the prototype's purpose and functionality"
-                rows={3}
-                style={{ width: '100%', marginTop: '5px' }}
-              />
-            </div>
-
-            <div style={{ display: 'flex', gap: '15px', marginBottom: '15px' }}>
-              <div style={{ flex: 1 }}>
-                <label>Type</label>
-                <DropDownList
-                  data={prototypeTypeOptions}
-                  textField="text"
-                  dataItemKey="value"
-                  value={prototypeTypeOptions.find(opt => opt.value === newPrototype.prototypeType)}
-                  onChange={(e) => setNewPrototype({ ...newPrototype, prototypeType: e.target.value.value })}
-                  style={{ width: '100%', marginTop: '5px' }}
-                />
+        <div className="fixed inset-0 z-50 overflow-y-auto">
+          <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+            <div
+              data-testid="create-prototype-dialog"
+              className="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6"
+            >
+              <div>
+                <h3 className="text-lg font-medium leading-6 text-gray-900 mb-4">
+                  Create New Prototype
+                </h3>
+                
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Name *
+                    </label>
+                    <input
+                      type="text"
+                      value={newPrototype.name}
+                      onChange={(e) => setNewPrototype(prev => ({ ...prev, name: e.target.value }))}
+                      className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      placeholder="Enter prototype name"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Description
+                    </label>
+                    <textarea
+                      value={newPrototype.description}
+                      onChange={(e) => setNewPrototype(prev => ({ ...prev, description: e.target.value }))}
+                      rows={3}
+                      className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      placeholder="Describe the prototype purpose and functionality"
+                    />
+                  </div>
+                  
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Type
+                      </label>
+                      <select
+                        value={newPrototype.prototypeType}
+                        onChange={(e) => setNewPrototype(prev => ({ ...prev, prototypeType: e.target.value }))}
+                        className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      >
+                        {prototypeService.getPrototypeTypes().map(type => (
+                          <option key={type.value} value={type.value}>{type.text}</option>
+                        ))}
+                      </select>
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Framework
+                      </label>
+                      <select
+                        value={newPrototype.framework}
+                        onChange={(e) => setNewPrototype(prev => ({ ...prev, framework: e.target.value }))}
+                        className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      >
+                        {prototypeService.getFrameworks().map(framework => (
+                          <option key={framework.value} value={framework.value}>{framework.text}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <label className="flex items-center">
+                      <input
+                        type="checkbox"
+                        checked={newPrototype.healthcareCompliance}
+                        onChange={(e) => setNewPrototype(prev => ({ ...prev, healthcareCompliance: e.target.checked }))}
+                        className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                      />
+                      <span className="ml-2 text-sm text-gray-700">Healthcare compliance required</span>
+                    </label>
+                    
+                    <label className="flex items-center">
+                      <input
+                        type="checkbox"
+                        checked={newPrototype.requiresApproval}
+                        onChange={(e) => setNewPrototype(prev => ({ ...prev, requiresApproval: e.target.checked }))}
+                        className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                      />
+                      <span className="ml-2 text-sm text-gray-700">Requires approval before deployment</span>
+                    </label>
+                  </div>
+                </div>
               </div>
-
-              <div style={{ flex: 1 }}>
-                <label>Framework</label>
-                <DropDownList
-                  data={frameworkOptions}
-                  textField="text"
-                  dataItemKey="value"
-                  value={frameworkOptions.find(opt => opt.value === newPrototype.framework)}
-                  onChange={(e) => setNewPrototype({ ...newPrototype, framework: e.target.value.value })}
-                  style={{ width: '100%', marginTop: '5px' }}
-                />
+              
+              <div className="mt-6 flex space-x-3 justify-end">
+                <button
+                  type="button"
+                  onClick={() => setShowCreateDialog(false)}
+                  className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="button"
+                  onClick={handleCreatePrototype}
+                  disabled={createPrototypeMutation.isPending}
+                  className="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {createPrototypeMutation.isPending ? 'Creating...' : 'Create Prototype'}
+                </button>
               </div>
-            </div>
-
-            <div style={{ marginBottom: '15px' }}>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={newPrototype.healthcareCompliance}
-                  onChange={(e) => setNewPrototype({ ...newPrototype, healthcareCompliance: e.target.checked })}
-                  style={{ marginRight: '8px' }}
-                />
-                Healthcare Compliance Required
-              </label>
-              <div style={{ fontSize: '12px', color: '#666', marginTop: '4px' }}>
-                Enables HIPAA tracking and clinical workflow validation
-              </div>
-            </div>
-
-            <div style={{ marginBottom: '15px' }}>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={newPrototype.requiresApproval}
-                  onChange={(e) => setNewPrototype({ ...newPrototype, requiresApproval: e.target.checked })}
-                  style={{ marginRight: '8px' }}
-                />
-                Requires Approval Workflow
-              </label>
             </div>
           </div>
-
-          <DialogActionsBar>
-            <Button onClick={() => setShowCreateDialog(false)}>Cancel</Button>
-            <Button 
-              themeColor="primary" 
-              onClick={handleCreatePrototype}
-              disabled={createPrototypeMutation.isPending}
-            >
-              {createPrototypeMutation.isPending ? 'Creating...' : 'Create Prototype'}
-            </Button>
-          </DialogActionsBar>
-        </Dialog>
+        </div>
       )}
-
-      {/* Notifications */}
-      <NotificationGroup
-        style={{
-          position: 'fixed',
-          right: '20px',
-          top: '80px',
-          zIndex: 9999,
-        }}
-      >
-        {notifications.map(notification => (
-          <Notification
-            key={notification.id}
-            type={notification.type}
-            closable={notification.closable}
-            onClose={() => setNotifications(prev => prev.filter(n => n.id !== notification.id))}
-          >
-            <span>{notification.message}</span>
-          </Notification>
-        ))}
-      </NotificationGroup>
     </div>
   );
 };

@@ -14,7 +14,7 @@ const api = axios.create({
 api.interceptors.request.use(
   (config) => {
     const authHeaders = authService.getAuthHeader();
-    config.headers = { ...config.headers, ...authHeaders };
+    Object.assign(config.headers, authHeaders);
     return config;
   },
   (error) => Promise.reject(error)
@@ -217,6 +217,33 @@ class ProjectService {
     });
     
     return distribution;
+  }
+
+  /**
+   * Create a new project
+   */
+  async createProject(projectData: {
+    name: string;
+    description?: string;
+    projectType?: string;
+    status?: string;
+    priority?: string;
+    businessObjective?: string;
+    healthcareCompliance?: boolean;
+    completionPercentage?: number;
+    createdBy?: string;
+  }): Promise<{ projectId: number }> {
+    const response = await api.post<{ 
+      success: boolean; 
+      data: { projectId: number }; 
+      message?: string; 
+    }>('/projects', projectData);
+    
+    if (!response.data.success) {
+      throw new Error('Failed to create project');
+    }
+    
+    return response.data.data;
   }
 }
 

@@ -15,7 +15,7 @@ api.interceptors.request.use(
   (config) => {
     // Add authentication headers for SourceLink SSO
     const authHeaders = authService.getAuthHeader();
-    config.headers = { ...config.headers, ...authHeaders };
+    Object.assign(config.headers, authHeaders);
     return config;
   },
   (error) => Promise.reject(error)

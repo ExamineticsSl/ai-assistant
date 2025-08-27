@@ -157,11 +157,11 @@ const PrototypeViewer: React.FC<PrototypeViewerProps> = ({
   };
 
   const getPrototypeUrl = () => {
-    if (!prototype?.data?.prototype) return '';
+    if (!prototype?.prototype) return '';
     
-    const proto = prototype.data.prototype;
-    const buildPath = proto.build_path || `/prototypes/${prototypeId}/v${version}`;
-    const entryPoint = proto.entry_point || 'index.html';
+    const proto = prototype.prototype;
+    const buildPath = proto.buildPath || `/prototypes/${prototypeId}/v${version}`;
+    const entryPoint = proto.entryPoint || 'index.html';
     
     return `${buildPath}/${entryPoint}`;
   };
@@ -199,7 +199,7 @@ const PrototypeViewer: React.FC<PrototypeViewerProps> = ({
     );
   }
 
-  if (!prototype?.data?.prototype) {
+  if (!prototype?.prototype) {
     return (
       <div style={{ textAlign: 'center', padding: '40px' }}>
         <h3>Prototype Not Found</h3>
@@ -209,7 +209,7 @@ const PrototypeViewer: React.FC<PrototypeViewerProps> = ({
     );
   }
 
-  const proto = prototype.data.prototype;
+  const proto = prototype.prototype;
 
   return (
     <div className="prototype-viewer" style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
@@ -227,8 +227,8 @@ const PrototypeViewer: React.FC<PrototypeViewerProps> = ({
             {proto.name} v{version}
           </h3>
           <p style={{ margin: '2px 0 0 0', color: '#666', fontSize: '14px' }}>
-            {proto.framework} • {proto.prototype_type}
-            {proto.healthcare_compliance && (
+            {proto.framework} • {proto.prototypeType}
+            {proto.healthcareCompliance && (
               <Badge themeColor="success" size="small" style={{ marginLeft: '10px' }}>
                 HEALTHCARE
               </Badge>
@@ -332,7 +332,7 @@ const PrototypeViewer: React.FC<PrototypeViewerProps> = ({
           backgroundColor: '#f8f9fa',
           overflow: 'auto'
         }}>
-          <TabStrip selected={selectedTab} onSelect={(e) => setSelectedTab(e.selected)}>
+          <TabStrip selected={selectedTab} onSelect={(e: any) => setSelectedTab(e.selected)}>
             <TabStripTab title={`Feedback (${feedback.length})`}>
               <div style={{ padding: '15px' }}>
                 {feedback.length === 0 ? (
@@ -404,7 +404,7 @@ const PrototypeViewer: React.FC<PrototypeViewerProps> = ({
 
             <TabStripTab title="Versions">
               <div style={{ padding: '15px' }}>
-                {prototype.data.versions?.map((v: any) => (
+                {prototype.versions?.map((v: any) => (
                   <div
                     key={v.id}
                     style={{
@@ -450,7 +450,7 @@ const PrototypeViewer: React.FC<PrototypeViewerProps> = ({
                 textField="text"
                 dataItemKey="value"
                 value={feedbackTypeOptions.find(opt => opt.value === newFeedback.feedbackType)}
-                onChange={(e) => setNewFeedback({ ...newFeedback, feedbackType: e.target.value.value })}
+                onChange={(e: any) => setNewFeedback({ ...newFeedback, feedbackType: e.target.value.value })}
                 style={{ width: '100%', marginTop: '5px' }}
               />
             </div>
@@ -459,7 +459,7 @@ const PrototypeViewer: React.FC<PrototypeViewerProps> = ({
               <label>Title (Optional)</label>
               <Input
                 value={newFeedback.title}
-                onChange={(e) => setNewFeedback({ ...newFeedback, title: e.target.value })}
+                onChange={(e: any) => setNewFeedback({ ...newFeedback, title: e.target.value })}
                 placeholder="Brief title for this feedback"
                 style={{ width: '100%', marginTop: '5px' }}
               />
@@ -469,7 +469,7 @@ const PrototypeViewer: React.FC<PrototypeViewerProps> = ({
               <label>Comment *</label>
               <TextArea
                 value={newFeedback.comment}
-                onChange={(e) => setNewFeedback({ ...newFeedback, comment: e.target.value })}
+                onChange={(e: any) => setNewFeedback({ ...newFeedback, comment: e.target.value })}
                 placeholder="Describe your feedback in detail"
                 rows={4}
                 style={{ width: '100%', marginTop: '5px' }}
@@ -484,7 +484,7 @@ const PrototypeViewer: React.FC<PrototypeViewerProps> = ({
                   textField="text"
                   dataItemKey="value"
                   value={priorityOptions.find(opt => opt.value === newFeedback.priority)}
-                  onChange={(e) => setNewFeedback({ ...newFeedback, priority: e.target.value.value })}
+                  onChange={(e: any) => setNewFeedback({ ...newFeedback, priority: e.target.value.value })}
                   style={{ width: '100%', marginTop: '5px' }}
                 />
               </div>
@@ -496,7 +496,7 @@ const PrototypeViewer: React.FC<PrototypeViewerProps> = ({
                   textField="text"
                   dataItemKey="value"
                   value={healthcareImpactOptions.find(opt => opt.value === newFeedback.healthcareImpact)}
-                  onChange={(e) => setNewFeedback({ ...newFeedback, healthcareImpact: e.target.value.value })}
+                  onChange={(e: any) => setNewFeedback({ ...newFeedback, healthcareImpact: e.target.value.value })}
                   style={{ width: '100%', marginTop: '5px' }}
                 />
               </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { HumanApprovalRequest, ApprovalAttachment } from '../types';
 import { approvalService } from '../services/approvalService';
@@ -142,7 +142,7 @@ export const ApprovalInbox: React.FC<ApprovalInboxProps> = ({ className = '' }) 
                   </div>
                   <p className="text-gray-600 mb-2 line-clamp-2">{approval.approvalDescription}</p>
                   <div className="flex items-center text-sm text-gray-500 space-x-4">
-                    <span>Requested by: {approval.requestedByRole}</span>
+                    <span>Requested by: {approval.requestedBy}</span>
                     <span>Project ID: {approval.projectId}</span>
                     <span>{formatTimeAgo(approval.requestedDate)}</span>
                     {approval.responseRequiredBy && (
@@ -241,7 +241,7 @@ const ApprovalDetailModal: React.FC<ApprovalDetailModalProps> = ({
                 <span className="font-medium">Priority:</span> {approval.urgencyLevel}
               </div>
               <div>
-                <span className="font-medium">Requested By:</span> {approval.requestedByRole}
+                <span className="font-medium">Requested By:</span> {approval.requestedBy}
               </div>
               <div>
                 <span className="font-medium">Project:</span> {approval.projectId}

@@ -29,7 +29,7 @@ export const developmentConfig = {
 
 // Helper to check if we're in development mode
 export const isDevelopment = () => {
-  return import.meta.env.DEV;
+  return (import.meta as any).env?.DEV || (import.meta as any).env?.MODE === 'development';
 };
 
 // Helper to get current config based on environment

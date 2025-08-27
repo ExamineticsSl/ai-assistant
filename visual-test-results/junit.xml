@@ -1,0 +1,884 @@
+<testsuites id="" name="" tests="54" failures="54" skipped="0" errors="0" time="24.0745">
+<testsuite name="dashboard.spec.ts" timestamp="2025-08-27T02:49:28.266Z" hostname="Desktop Chrome" tests="7" failures="7" skipped="0" time="0.113" errors="0">
+<testcase name="Dashboard Visual Tests › should display main dashboard correctly" classname="dashboard.spec.ts" time="0.014">
+<failure message="dashboard.spec.ts:20:3 should display main dashboard correctly" type="FAILURE">
+<![CDATA[  [Desktop Chrome] › dashboard.spec.ts:20:3 › Dashboard Visual Tests › should display main dashboard correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Dashboard Visual Tests › should display approval inbox correctly" classname="dashboard.spec.ts" time="0.013">
+<failure message="dashboard.spec.ts:71:3 should display approval inbox correctly" type="FAILURE">
+<![CDATA[  [Desktop Chrome] › dashboard.spec.ts:71:3 › Dashboard Visual Tests › should display approval inbox correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Dashboard Visual Tests › should display task submission modal correctly" classname="dashboard.spec.ts" time="0.013">
+<failure message="dashboard.spec.ts:131:3 should display task submission modal correctly" type="FAILURE">
+<![CDATA[  [Desktop Chrome] › dashboard.spec.ts:131:3 › Dashboard Visual Tests › should display task submission modal correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Dashboard Visual Tests › should display project progress tab correctly" classname="dashboard.spec.ts" time="0.026">
+<failure message="dashboard.spec.ts:163:3 should display project progress tab correctly" type="FAILURE">
+<![CDATA[  [Desktop Chrome] › dashboard.spec.ts:163:3 › Dashboard Visual Tests › should display project progress tab correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Dashboard Visual Tests › should handle mobile viewport correctly" classname="dashboard.spec.ts" time="0.023">
+<failure message="dashboard.spec.ts:196:3 should handle mobile viewport correctly" type="FAILURE">
+<![CDATA[  [Desktop Chrome] › dashboard.spec.ts:196:3 › Dashboard Visual Tests › should handle mobile viewport correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Dashboard Visual Tests › should display error states correctly" classname="dashboard.spec.ts" time="0.012">
+<failure message="dashboard.spec.ts:237:3 should display error states correctly" type="FAILURE">
+<![CDATA[  [Desktop Chrome] › dashboard.spec.ts:237:3 › Dashboard Visual Tests › should display error states correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Dashboard Visual Tests › should display loading states correctly" classname="dashboard.spec.ts" time="0.012">
+<failure message="dashboard.spec.ts:270:3 should display loading states correctly" type="FAILURE">
+<![CDATA[  [Desktop Chrome] › dashboard.spec.ts:270:3 › Dashboard Visual Tests › should display loading states correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="prototype-manager.spec.ts" timestamp="2025-08-27T02:49:28.266Z" hostname="Desktop Chrome" tests="5" failures="5" skipped="0" time="0.075" errors="0">
+<testcase name="PrototypeManager Visual Tests › should display prototype manager interface correctly" classname="prototype-manager.spec.ts" time="0.016">
+<failure message="prototype-manager.spec.ts:21:3 should display prototype manager interface correctly" type="FAILURE">
+<![CDATA[  [Desktop Chrome] › prototype-manager.spec.ts:21:3 › PrototypeManager Visual Tests › should display prototype manager interface correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeManager Visual Tests › should display create prototype dialog correctly" classname="prototype-manager.spec.ts" time="0.013">
+<failure message="prototype-manager.spec.ts:68:3 should display create prototype dialog correctly" type="FAILURE">
+<![CDATA[  [Desktop Chrome] › prototype-manager.spec.ts:68:3 › PrototypeManager Visual Tests › should display create prototype dialog correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeManager Visual Tests › should display prototype cards with healthcare badges correctly" classname="prototype-manager.spec.ts" time="0.014">
+<failure message="prototype-manager.spec.ts:93:3 should display prototype cards with healthcare badges correctly" type="FAILURE">
+<![CDATA[  [Desktop Chrome] › prototype-manager.spec.ts:93:3 › PrototypeManager Visual Tests › should display prototype cards with healthcare badges correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeManager Visual Tests › should handle different viewport sizes correctly" classname="prototype-manager.spec.ts" time="0.019">
+<failure message="prototype-manager.spec.ts:139:3 should handle different viewport sizes correctly" type="FAILURE">
+<![CDATA[  [Desktop Chrome] › prototype-manager.spec.ts:139:3 › PrototypeManager Visual Tests › should handle different viewport sizes correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeManager Visual Tests › should display error state correctly" classname="prototype-manager.spec.ts" time="0.013">
+<failure message="prototype-manager.spec.ts:159:3 should display error state correctly" type="FAILURE">
+<![CDATA[  [Desktop Chrome] › prototype-manager.spec.ts:159:3 › PrototypeManager Visual Tests › should display error state correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="prototype-viewer.spec.ts" timestamp="2025-08-27T02:49:28.266Z" hostname="Desktop Chrome" tests="6" failures="6" skipped="0" time="0.089" errors="0">
+<testcase name="PrototypeViewer Visual Tests › should display prototype viewer interface correctly" classname="prototype-viewer.spec.ts" time="0.017">
+<failure message="prototype-viewer.spec.ts:20:3 should display prototype viewer interface correctly" type="FAILURE">
+<![CDATA[  [Desktop Chrome] › prototype-viewer.spec.ts:20:3 › PrototypeViewer Visual Tests › should display prototype viewer interface correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeViewer Visual Tests › should display feedback mode correctly" classname="prototype-viewer.spec.ts" time="0.015">
+<failure message="prototype-viewer.spec.ts:90:3 should display feedback mode correctly" type="FAILURE">
+<![CDATA[  [Desktop Chrome] › prototype-viewer.spec.ts:90:3 › PrototypeViewer Visual Tests › should display feedback mode correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeViewer Visual Tests › should display feedback pins correctly" classname="prototype-viewer.spec.ts" time="0.014">
+<failure message="prototype-viewer.spec.ts:133:3 should display feedback pins correctly" type="FAILURE">
+<![CDATA[  [Desktop Chrome] › prototype-viewer.spec.ts:133:3 › PrototypeViewer Visual Tests › should display feedback pins correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeViewer Visual Tests › should display feedback panel correctly" classname="prototype-viewer.spec.ts" time="0.016">
+<failure message="prototype-viewer.spec.ts:193:3 should display feedback panel correctly" type="FAILURE">
+<![CDATA[  [Desktop Chrome] › prototype-viewer.spec.ts:193:3 › PrototypeViewer Visual Tests › should display feedback panel correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeViewer Visual Tests › should display new feedback form correctly" classname="prototype-viewer.spec.ts" time="0.014">
+<failure message="prototype-viewer.spec.ts:245:3 should display new feedback form correctly" type="FAILURE">
+<![CDATA[  [Desktop Chrome] › prototype-viewer.spec.ts:245:3 › PrototypeViewer Visual Tests › should display new feedback form correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeViewer Visual Tests › should handle tablet viewport correctly" classname="prototype-viewer.spec.ts" time="0.013">
+<failure message="prototype-viewer.spec.ts:288:3 should handle tablet viewport correctly" type="FAILURE">
+<![CDATA[  [Desktop Chrome] › prototype-viewer.spec.ts:288:3 › PrototypeViewer Visual Tests › should handle tablet viewport correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="dashboard.spec.ts" timestamp="2025-08-27T02:49:28.266Z" hostname="Desktop Firefox" tests="7" failures="7" skipped="0" time="0.106" errors="0">
+<testcase name="Dashboard Visual Tests › should display main dashboard correctly" classname="dashboard.spec.ts" time="0.014">
+<failure message="dashboard.spec.ts:20:3 should display main dashboard correctly" type="FAILURE">
+<![CDATA[  [Desktop Firefox] › dashboard.spec.ts:20:3 › Dashboard Visual Tests › should display main dashboard correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\firefox-1490\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Dashboard Visual Tests › should display approval inbox correctly" classname="dashboard.spec.ts" time="0.014">
+<failure message="dashboard.spec.ts:71:3 should display approval inbox correctly" type="FAILURE">
+<![CDATA[  [Desktop Firefox] › dashboard.spec.ts:71:3 › Dashboard Visual Tests › should display approval inbox correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\firefox-1490\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Dashboard Visual Tests › should display task submission modal correctly" classname="dashboard.spec.ts" time="0.02">
+<failure message="dashboard.spec.ts:131:3 should display task submission modal correctly" type="FAILURE">
+<![CDATA[  [Desktop Firefox] › dashboard.spec.ts:131:3 › Dashboard Visual Tests › should display task submission modal correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\firefox-1490\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Dashboard Visual Tests › should display project progress tab correctly" classname="dashboard.spec.ts" time="0.015">
+<failure message="dashboard.spec.ts:163:3 should display project progress tab correctly" type="FAILURE">
+<![CDATA[  [Desktop Firefox] › dashboard.spec.ts:163:3 › Dashboard Visual Tests › should display project progress tab correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\firefox-1490\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Dashboard Visual Tests › should handle mobile viewport correctly" classname="dashboard.spec.ts" time="0.016">
+<failure message="dashboard.spec.ts:196:3 should handle mobile viewport correctly" type="FAILURE">
+<![CDATA[  [Desktop Firefox] › dashboard.spec.ts:196:3 › Dashboard Visual Tests › should handle mobile viewport correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\firefox-1490\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Dashboard Visual Tests › should display error states correctly" classname="dashboard.spec.ts" time="0.013">
+<failure message="dashboard.spec.ts:237:3 should display error states correctly" type="FAILURE">
+<![CDATA[  [Desktop Firefox] › dashboard.spec.ts:237:3 › Dashboard Visual Tests › should display error states correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\firefox-1490\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Dashboard Visual Tests › should display loading states correctly" classname="dashboard.spec.ts" time="0.014">
+<failure message="dashboard.spec.ts:270:3 should display loading states correctly" type="FAILURE">
+<![CDATA[  [Desktop Firefox] › dashboard.spec.ts:270:3 › Dashboard Visual Tests › should display loading states correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\firefox-1490\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="prototype-manager.spec.ts" timestamp="2025-08-27T02:49:28.266Z" hostname="Desktop Firefox" tests="5" failures="5" skipped="0" time="0.094" errors="0">
+<testcase name="PrototypeManager Visual Tests › should display prototype manager interface correctly" classname="prototype-manager.spec.ts" time="0.021">
+<failure message="prototype-manager.spec.ts:21:3 should display prototype manager interface correctly" type="FAILURE">
+<![CDATA[  [Desktop Firefox] › prototype-manager.spec.ts:21:3 › PrototypeManager Visual Tests › should display prototype manager interface correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\firefox-1490\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeManager Visual Tests › should display create prototype dialog correctly" classname="prototype-manager.spec.ts" time="0.017">
+<failure message="prototype-manager.spec.ts:68:3 should display create prototype dialog correctly" type="FAILURE">
+<![CDATA[  [Desktop Firefox] › prototype-manager.spec.ts:68:3 › PrototypeManager Visual Tests › should display create prototype dialog correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\firefox-1490\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeManager Visual Tests › should display prototype cards with healthcare badges correctly" classname="prototype-manager.spec.ts" time="0.014">
+<failure message="prototype-manager.spec.ts:93:3 should display prototype cards with healthcare badges correctly" type="FAILURE">
+<![CDATA[  [Desktop Firefox] › prototype-manager.spec.ts:93:3 › PrototypeManager Visual Tests › should display prototype cards with healthcare badges correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\firefox-1490\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeManager Visual Tests › should handle different viewport sizes correctly" classname="prototype-manager.spec.ts" time="0.015">
+<failure message="prototype-manager.spec.ts:139:3 should handle different viewport sizes correctly" type="FAILURE">
+<![CDATA[  [Desktop Firefox] › prototype-manager.spec.ts:139:3 › PrototypeManager Visual Tests › should handle different viewport sizes correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\firefox-1490\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeManager Visual Tests › should display error state correctly" classname="prototype-manager.spec.ts" time="0.027">
+<failure message="prototype-manager.spec.ts:159:3 should display error state correctly" type="FAILURE">
+<![CDATA[  [Desktop Firefox] › prototype-manager.spec.ts:159:3 › PrototypeManager Visual Tests › should display error state correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\firefox-1490\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="prototype-viewer.spec.ts" timestamp="2025-08-27T02:49:28.266Z" hostname="Desktop Firefox" tests="6" failures="6" skipped="0" time="0.085" errors="0">
+<testcase name="PrototypeViewer Visual Tests › should display prototype viewer interface correctly" classname="prototype-viewer.spec.ts" time="0.015">
+<failure message="prototype-viewer.spec.ts:20:3 should display prototype viewer interface correctly" type="FAILURE">
+<![CDATA[  [Desktop Firefox] › prototype-viewer.spec.ts:20:3 › PrototypeViewer Visual Tests › should display prototype viewer interface correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\firefox-1490\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeViewer Visual Tests › should display feedback mode correctly" classname="prototype-viewer.spec.ts" time="0.014">
+<failure message="prototype-viewer.spec.ts:90:3 should display feedback mode correctly" type="FAILURE">
+<![CDATA[  [Desktop Firefox] › prototype-viewer.spec.ts:90:3 › PrototypeViewer Visual Tests › should display feedback mode correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\firefox-1490\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeViewer Visual Tests › should display feedback pins correctly" classname="prototype-viewer.spec.ts" time="0.015">
+<failure message="prototype-viewer.spec.ts:133:3 should display feedback pins correctly" type="FAILURE">
+<![CDATA[  [Desktop Firefox] › prototype-viewer.spec.ts:133:3 › PrototypeViewer Visual Tests › should display feedback pins correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\firefox-1490\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeViewer Visual Tests › should display feedback panel correctly" classname="prototype-viewer.spec.ts" time="0.015">
+<failure message="prototype-viewer.spec.ts:193:3 should display feedback panel correctly" type="FAILURE">
+<![CDATA[  [Desktop Firefox] › prototype-viewer.spec.ts:193:3 › PrototypeViewer Visual Tests › should display feedback panel correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\firefox-1490\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeViewer Visual Tests › should display new feedback form correctly" classname="prototype-viewer.spec.ts" time="0.013">
+<failure message="prototype-viewer.spec.ts:245:3 should display new feedback form correctly" type="FAILURE">
+<![CDATA[  [Desktop Firefox] › prototype-viewer.spec.ts:245:3 › PrototypeViewer Visual Tests › should display new feedback form correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\firefox-1490\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeViewer Visual Tests › should handle tablet viewport correctly" classname="prototype-viewer.spec.ts" time="0.013">
+<failure message="prototype-viewer.spec.ts:288:3 should handle tablet viewport correctly" type="FAILURE">
+<![CDATA[  [Desktop Firefox] › prototype-viewer.spec.ts:288:3 › PrototypeViewer Visual Tests › should handle tablet viewport correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\firefox-1490\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="dashboard.spec.ts" timestamp="2025-08-27T02:49:28.266Z" hostname="Healthcare Tablet" tests="7" failures="7" skipped="0" time="0.091" errors="0">
+<testcase name="Dashboard Visual Tests › should display main dashboard correctly" classname="dashboard.spec.ts" time="0.012">
+<failure message="dashboard.spec.ts:20:3 should display main dashboard correctly" type="FAILURE">
+<![CDATA[  [Healthcare Tablet] › dashboard.spec.ts:20:3 › Dashboard Visual Tests › should display main dashboard correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Dashboard Visual Tests › should display approval inbox correctly" classname="dashboard.spec.ts" time="0.014">
+<failure message="dashboard.spec.ts:71:3 should display approval inbox correctly" type="FAILURE">
+<![CDATA[  [Healthcare Tablet] › dashboard.spec.ts:71:3 › Dashboard Visual Tests › should display approval inbox correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Dashboard Visual Tests › should display task submission modal correctly" classname="dashboard.spec.ts" time="0.018">
+<failure message="dashboard.spec.ts:131:3 should display task submission modal correctly" type="FAILURE">
+<![CDATA[  [Healthcare Tablet] › dashboard.spec.ts:131:3 › Dashboard Visual Tests › should display task submission modal correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Dashboard Visual Tests › should display project progress tab correctly" classname="dashboard.spec.ts" time="0.014">
+<failure message="dashboard.spec.ts:163:3 should display project progress tab correctly" type="FAILURE">
+<![CDATA[  [Healthcare Tablet] › dashboard.spec.ts:163:3 › Dashboard Visual Tests › should display project progress tab correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Dashboard Visual Tests › should handle mobile viewport correctly" classname="dashboard.spec.ts" time="0.014">
+<failure message="dashboard.spec.ts:196:3 should handle mobile viewport correctly" type="FAILURE">
+<![CDATA[  [Healthcare Tablet] › dashboard.spec.ts:196:3 › Dashboard Visual Tests › should handle mobile viewport correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Dashboard Visual Tests › should display error states correctly" classname="dashboard.spec.ts" time="0.011">
+<failure message="dashboard.spec.ts:237:3 should display error states correctly" type="FAILURE">
+<![CDATA[  [Healthcare Tablet] › dashboard.spec.ts:237:3 › Dashboard Visual Tests › should display error states correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="Dashboard Visual Tests › should display loading states correctly" classname="dashboard.spec.ts" time="0.008">
+<failure message="dashboard.spec.ts:270:3 should display loading states correctly" type="FAILURE">
+<![CDATA[  [Healthcare Tablet] › dashboard.spec.ts:270:3 › Dashboard Visual Tests › should display loading states correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="prototype-manager.spec.ts" timestamp="2025-08-27T02:49:28.266Z" hostname="Healthcare Tablet" tests="5" failures="5" skipped="0" time="0.051" errors="0">
+<testcase name="PrototypeManager Visual Tests › should display prototype manager interface correctly" classname="prototype-manager.spec.ts" time="0.015">
+<failure message="prototype-manager.spec.ts:21:3 should display prototype manager interface correctly" type="FAILURE">
+<![CDATA[  [Healthcare Tablet] › prototype-manager.spec.ts:21:3 › PrototypeManager Visual Tests › should display prototype manager interface correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeManager Visual Tests › should display create prototype dialog correctly" classname="prototype-manager.spec.ts" time="0.016">
+<failure message="prototype-manager.spec.ts:68:3 should display create prototype dialog correctly" type="FAILURE">
+<![CDATA[  [Healthcare Tablet] › prototype-manager.spec.ts:68:3 › PrototypeManager Visual Tests › should display create prototype dialog correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeManager Visual Tests › should display prototype cards with healthcare badges correctly" classname="prototype-manager.spec.ts" time="0.007">
+<failure message="prototype-manager.spec.ts:93:3 should display prototype cards with healthcare badges correctly" type="FAILURE">
+<![CDATA[  [Healthcare Tablet] › prototype-manager.spec.ts:93:3 › PrototypeManager Visual Tests › should display prototype cards with healthcare badges correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeManager Visual Tests › should handle different viewport sizes correctly" classname="prototype-manager.spec.ts" time="0.006">
+<failure message="prototype-manager.spec.ts:139:3 should handle different viewport sizes correctly" type="FAILURE">
+<![CDATA[  [Healthcare Tablet] › prototype-manager.spec.ts:139:3 › PrototypeManager Visual Tests › should handle different viewport sizes correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeManager Visual Tests › should display error state correctly" classname="prototype-manager.spec.ts" time="0.007">
+<failure message="prototype-manager.spec.ts:159:3 should display error state correctly" type="FAILURE">
+<![CDATA[  [Healthcare Tablet] › prototype-manager.spec.ts:159:3 › PrototypeManager Visual Tests › should display error state correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="prototype-viewer.spec.ts" timestamp="2025-08-27T02:49:28.266Z" hostname="Healthcare Tablet" tests="6" failures="6" skipped="0" time="0.052" errors="0">
+<testcase name="PrototypeViewer Visual Tests › should display prototype viewer interface correctly" classname="prototype-viewer.spec.ts" time="0.013">
+<failure message="prototype-viewer.spec.ts:20:3 should display prototype viewer interface correctly" type="FAILURE">
+<![CDATA[  [Healthcare Tablet] › prototype-viewer.spec.ts:20:3 › PrototypeViewer Visual Tests › should display prototype viewer interface correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeViewer Visual Tests › should display feedback mode correctly" classname="prototype-viewer.spec.ts" time="0.011">
+<failure message="prototype-viewer.spec.ts:90:3 should display feedback mode correctly" type="FAILURE">
+<![CDATA[  [Healthcare Tablet] › prototype-viewer.spec.ts:90:3 › PrototypeViewer Visual Tests › should display feedback mode correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeViewer Visual Tests › should display feedback pins correctly" classname="prototype-viewer.spec.ts" time="0.008">
+<failure message="prototype-viewer.spec.ts:133:3 should display feedback pins correctly" type="FAILURE">
+<![CDATA[  [Healthcare Tablet] › prototype-viewer.spec.ts:133:3 › PrototypeViewer Visual Tests › should display feedback pins correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeViewer Visual Tests › should display feedback panel correctly" classname="prototype-viewer.spec.ts" time="0.008">
+<failure message="prototype-viewer.spec.ts:193:3 should display feedback panel correctly" type="FAILURE">
+<![CDATA[  [Healthcare Tablet] › prototype-viewer.spec.ts:193:3 › PrototypeViewer Visual Tests › should display feedback panel correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeViewer Visual Tests › should display new feedback form correctly" classname="prototype-viewer.spec.ts" time="0.007">
+<failure message="prototype-viewer.spec.ts:245:3 should display new feedback form correctly" type="FAILURE">
+<![CDATA[  [Healthcare Tablet] › prototype-viewer.spec.ts:245:3 › PrototypeViewer Visual Tests › should display new feedback form correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="PrototypeViewer Visual Tests › should handle tablet viewport correctly" classname="prototype-viewer.spec.ts" time="0.005">
+<failure message="prototype-viewer.spec.ts:288:3 should handle tablet viewport correctly" type="FAILURE">
+<![CDATA[  [Healthcare Tablet] › prototype-viewer.spec.ts:288:3 › PrototypeViewer Visual Tests › should handle tablet viewport correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\matthew.holton\AppData\Local\ms-playwright\chromium_headless_shell-1187\chrome-win\headless_shell.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+</testsuite>
+</testsuites>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { HumanApprovalDashboard } from './components/HumanApprovalDashboard';
 import { LoginForm } from './components/LoginForm';
@@ -75,8 +75,13 @@ function App() {
         <Routes>
           <Route path="/" element={<HumanApprovalDashboard />} />
           <Route path="/approvals" element={<HumanApprovalDashboard />} />
+          <Route path="/projects" element={<HumanApprovalDashboard />} />
+          <Route path="/project-progress" element={<HumanApprovalDashboard />} />
+          <Route path="/history" element={<HumanApprovalDashboard />} />
+          <Route path="/stats" element={<HumanApprovalDashboard />} />
+          <Route path="/analytics" element={<HumanApprovalDashboard />} />
           <Route path="/local-auth-test" element={<LocalAuthTest />} />
-          {/* Future routes can be added here */}
+          {/* Fallback to dashboard */}
           <Route path="*" element={<HumanApprovalDashboard />} />
         </Routes>
       </main>
