@@ -1,14 +1,47 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { ApprovalInbox } from './ApprovalInbox';
 import { ProjectProgressTracking } from './ProjectProgressTracking';
-import { approvalService, ApprovalStats } from '../services/approvalService';
+import PrototypeManager from './PrototypeManager';
+import { approvalService } from '../services/approvalService';
 
 export const HumanApprovalDashboard: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'inbox' | 'projects' | 'history' | 'stats'>('inbox');
+  const location = useLocation();
+  const navigate = useNavigate();
+  
+  // Extract tab from URL or default to inbox
+  const getTabFromUrl = (): 'inbox' | 'projects' | 'prototypes' | 'history' | 'stats' => {
+    const path = location.pathname.toLowerCase();
+    if (path.includes('/projects') || path.includes('/project-progress')) return 'projects';
+    if (path.includes('/prototypes')) return 'prototypes';
+    if (path.includes('/history')) return 'history';
+    if (path.includes('/stats') || path.includes('/analytics')) return 'stats';
+    return 'inbox';
+  };
+
+  const [activeTab, setActiveTab] = useState<'inbox' | 'projects' | 'prototypes' | 'history' | 'stats'>(getTabFromUrl());
+
+  // Update tab when URL changes
+  useEffect(() => {
+    setActiveTab(getTabFromUrl());
+  }, [location.pathname]);
+
+  // Handle tab changes with URL updates
+  const handleTabChange = (tab: 'inbox' | 'projects' | 'prototypes' | 'history' | 'stats') => {
+    setActiveTab(tab);
+    const routes = {
+      inbox: '/',
+      projects: '/projects',
+      prototypes: '/prototypes',
+      history: '/history', 
+      stats: '/stats'
+    };
+    navigate(routes[tab]);
+  };
 
   // Fetch approval statistics
-  const { data: stats, isLoading: statsLoading } = useQuery({
+  const { data: stats } = useQuery({
     queryKey: ['approval-stats'],
     queryFn: () => approvalService.getApprovalStats(),
     refetchInterval: 60000, // Refresh every minute
@@ -45,7 +78,7 @@ export const HumanApprovalDashboard: React.FC = () => {
             value={stats?.pending || 0}
             icon="⏳"
             color="yellow"
-            urgent={stats?.pending && stats.pending > 10}
+            urgent={Boolean(stats?.pending && stats.pending > 10)}
           />
           <StatCard
             title="Total Requests"
@@ -80,12 +113,13 @@ export const HumanApprovalDashboard: React.FC = () => {
               {[
                 { key: 'inbox', label: 'Approval Inbox', count: stats?.pending },
                 { key: 'projects', label: 'Project Progress', count: undefined },
+                { key: 'prototypes', label: 'Prototypes', count: undefined },
                 { key: 'history', label: 'History', count: undefined },
                 { key: 'stats', label: 'Analytics', count: undefined },
               ].map((tab) => (
                 <button
                   key={tab.key}
-                  onClick={() => setActiveTab(tab.key as any)}
+                  onClick={() => handleTabChange(tab.key as any)}
                   className={`
                     py-4 px-1 border-b-2 font-medium text-sm whitespace-nowrap
                     ${activeTab === tab.key
@@ -110,6 +144,18 @@ export const HumanApprovalDashboard: React.FC = () => {
             {activeTab === 'inbox' && <ApprovalInbox />}
             
             {activeTab === 'projects' && <ProjectProgressTracking />}
+            
+            {activeTab === 'prototypes' && (
+              <div className="p-4">
+                <PrototypeManager 
+                  projectId={1} // Default to first project, could be dynamic
+                  onPrototypeSelect={(prototype) => {
+                    console.log('Selected prototype:', prototype);
+                    // Could navigate to prototype viewer or show in modal
+                  }}
+                />
+              </div>
+            )}
             
             {activeTab === 'history' && (
               <div className="p-6">
