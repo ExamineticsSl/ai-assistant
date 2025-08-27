@@ -46,7 +46,9 @@ class ResourceTypeAuthService {
         this.currentUser = JSON.parse(userJson);
         
         // Validate ResourceType constraints for loaded user
-        this.validateUserResourceTypeConstraints(this.currentUser);
+        if (this.currentUser) {
+          this.validateUserResourceTypeConstraints(this.currentUser);
+        }
       }
     } catch (error) {
       console.warn('Failed to load authentication state from storage:', error);
