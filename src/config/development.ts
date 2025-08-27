@@ -19,6 +19,15 @@ export const developmentConfig = {
     decodeEndpoint: '/IdentityApp/api/v1/Auth/decode'
   },
   
+  // ResourceType Identity Provider endpoints
+  resourceTypeIdp: {
+    baseUrl: 'http://localhost:5000',
+    authEndpoint: '/api/identity/authenticate',
+    validateEndpoint: '/api/identity/validate',
+    constraintsEndpoint: '/api/identity/constraints',
+    refreshEndpoint: '/api/identity/refresh'
+  },
+  
   // Development settings
   development: {
     enableDebugLogging: true,

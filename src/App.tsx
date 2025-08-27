@@ -6,7 +6,8 @@ import { Header } from './components/Header';
 import { DebugPanel } from './components/DebugPanel';
 import { LocalAuthTest } from './components/LocalAuthTest';
 import { DevBypass } from './components/DevBypass';
-import { authService, AuthUser } from './services/authService';
+import { resourceTypeAuthService as authService } from './services/authService.resourceType';
+import { AuthUser } from './types/index';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -64,6 +65,28 @@ function App() {
 
   if (!isAuthenticated) {
     return <LoginForm onLoginSuccess={handleLoginSuccess} />;
+  }
+
+  // Check if authenticated user can access UI (ResourceType constraint)
+  if (isAuthenticated && !authService.canAccessUI()) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-red-50">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-red-800 mb-4">
+            Access Restricted
+          </h2>
+          <p className="text-red-600 mb-4">
+            Your ResourceType ({authService.getUserResourceType()}) does not have UI access permissions.
+          </p>
+          <button
+            onClick={handleLogout}
+            className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+    );
   }
 
   return (

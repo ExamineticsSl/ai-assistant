@@ -1,5 +1,6 @@
 import React from 'react';
-import { authService, AuthUser } from '../services/authService';
+import { resourceTypeAuthService as authService } from '../services/authService.resourceType';
+import { AuthUser } from '../types/index';
 
 interface HeaderProps {
   user: AuthUser;
@@ -29,6 +30,11 @@ export const Header: React.FC<HeaderProps> = ({ user, onLogout }) => {
             <div className="text-sm text-gray-700">
               <span className="font-medium">{user.displayName}</span>
               <span className="text-gray-500 ml-2">({user.username})</span>
+              <div className="text-xs text-gray-500 mt-1">
+                <span>Type: {user.resourceType}</span>
+                <span className="ml-2">Clearance: {user.clearanceLevel}</span>
+                <span className="ml-2">Dept: {user.department}</span>
+              </div>
             </div>
 
             {/* Roles badge */}
