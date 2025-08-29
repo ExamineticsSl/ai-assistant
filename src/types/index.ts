@@ -1,3 +1,78 @@
+// ResourceType RBAC Types for Identity Provider Integration
+export enum ResourceType {
+  User = 'User',
+  AgentWorkerService = 'AgentWorkerService',
+  DataSource = 'DataSource',
+  ComputeResource = 'ComputeResource',
+  Integration = 'Integration',
+  Tool = 'Tool',
+  Dashboard = 'Dashboard',
+  Workflow = 'Workflow'
+}
+
+export enum SecurityClearanceLevel {
+  Public = 1,
+  Internal = 2,
+  Confidential = 3,
+  Restricted = 4
+}
+
+export interface AuthUser {
+  userId: string;
+  username: string;
+  displayName: string;
+  email: string;
+  resourceType: ResourceType;
+  clearanceLevel: SecurityClearanceLevel;
+  department: string;
+  jobTitle?: string;
+  businessUnit?: string;
+  allowedPermissions: string[];
+  restrictedActions: string[];
+  groupMemberships: string[];
+  roles: string[];
+  isAuthenticated: boolean;
+  requiresMfa?: boolean;
+  lastLoginDate?: string;
+}
+
+export interface ResourceAuthenticationRequest {
+  resourceId: string;
+  apiKey: string;
+  serviceSecret: string;
+}
+
+export interface AuthenticationRequest {
+  email: string;
+  password: string;
+  mfaCode?: string;
+}
+
+export interface AuthenticationResponse {
+  success: boolean;
+  user?: AuthUser;
+  token?: string;
+  refreshToken?: string;
+  expiresAt?: string;
+  message?: string;
+  error?: string;
+  requiresMfa?: boolean;
+}
+
+export interface CompatibilityResult {
+  isCompatible: boolean;
+  restrictions: string[];
+  warnings: string[];
+  recommendations: string[];
+}
+
+export interface ResourceTypeValidationResult {
+  isValid: boolean;
+  allowedActions: string[];
+  blockedActions: string[];
+  reasons: string[];
+}
+
 // Agent Role Types
 export interface AgentRole {
   roleId: string;

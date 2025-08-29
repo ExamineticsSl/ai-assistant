@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { authService } from '../services/authService';
+import { resourceTypeAuthService as authService } from '../services/authService.resourceType';
+import { AuthenticationRequest } from '../types/index';
 
 interface LoginFormProps {
   onLoginSuccess: () => void;
 }
 
 export const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
-  const [credentials, setCredentials] = useState({
-    username: '',
+  const [credentials, setCredentials] = useState<AuthenticationRequest>({
+    email: '',
     password: ''
   });
   const [isLoading, setIsLoading] = useState(false);
@@ -49,7 +50,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
             ExamineticsSl AI Assistant
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            Sign in with your SourceLink credentials
+            Sign in with your ResourceType Identity Provider credentials
           </p>
         </div>
         
@@ -62,17 +63,17 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
           
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
-              <label htmlFor="username" className="sr-only">
-                Username
+              <label htmlFor="email" className="sr-only">
+                Email
               </label>
               <input
-                id="username"
-                name="username"
-                type="text"
+                id="email"
+                name="email"
+                type="email"
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
-                placeholder="Username"
-                value={credentials.username}
+                placeholder="Email address"
+                value={credentials.email}
                 onChange={handleInputChange}
               />
             </div>
@@ -105,10 +106,10 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
 
           <div className="text-center">
             <p className="text-sm text-gray-600">
-              Use your SourceLink credentials to access the AI Assistant
+              Use your ResourceType Identity Provider credentials to access the AI Assistant
             </p>
             <p className="text-xs text-gray-500 mt-1">
-              Connected to LegacyIdentity service (same as Portal-UI)
+              Connected to ResourceType RBAC Identity Provider with IMMUTABLE constraints
             </p>
           </div>
         </form>
